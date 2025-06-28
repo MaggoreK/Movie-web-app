@@ -113,14 +113,16 @@ body {
   flex-direction: column;
   width: 35%;
   justify-content: center;
+  align-items: center;
 }
 
 .email-headline {
   font-size: .75rem;
 }
 .email-block {
+  flex-direction: column;
+  display: flex;
   max-width: 26rem;
-  /* width: 100%; */
   margin-top: .75rem;
 }
 
