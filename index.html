@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Databaze filmů</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <a href="index.html"><img src="./img/netflix-logo.png" alt="Logo" /></a>
+            </div>
+
+            <div class="navbar-register">
+                <a href="signin.html" class="register-btn">Registrace</a>
+            </div>
+        </nav>
+
+        <div class="hero-background">
+            <div class="hero-content">
+                <h1>Neomezené sledování filmů, TV pořadů a dalšího obsahu</h1>
+                <p>Už od 239 Kč. Zrušíte kdykoli.</p>
+                <div class="email-block">
+                    <div class="email-headline">
+                        <p>Jste připraveni se dívat? Pro vytvoření nebo obnovení členství zadejte e-mail.</p>
+                    </div>
+                    <form class="email-form" onsubmit="event.preventDefault(); window.location.href='signin.html';">
+                        <input id="emailInput" type="email" placeholder="  E-mailová adresa" required>
+                        <button id="signinBtn" type="submit">Začít</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="movie-content">
+        <div class="movie-preview">
+            <img src="./img/avengers.jpg" alt="Avengers: Infinity War">
+            <img src="./img/bugs-life.jpeg" alt="a Bugs life">
+            <img src="./img/thor.jpeg" alt="Thor">
+        </div>
+        
+        <div class="movie-button">
+            <a href="movies.html">Najít další filmy</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <ul>
+                <li><a href="#">Často kladené dotazy</a></li>
+                <li><a href="#">Vztahy s investory</a></li>
+                <li><a href="#">Jak se dívat</a></li>
+                <li><a href="#">Reklamní informace</a></li>
+                <li><a href="#">Články členství</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Centrum zákaznické podpory</a></li>
+                <li><a href="#">Kariéra</a></li>
+                <li><a href="#">Podmínky používání</a></li>
+                <li><a href="#">Kontaktujte nás</a></li>
+                <li><a href="#">Uživ. jedná Netflix</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Účet</a></li>
+                <li><a href="#">Uplatněte dárkové poukazy</a></li>
+                <li><a href="#">Soukromí</a></li>
+                <li><a href="#">Test rychlosti</a></li>
+                <li><a href="#">Reklamy</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Pro média</a></li>
+                <li><a href="#">Koupit dárkové poukazy</a></li>
+                <li><a href="#">Nastavení souborů cookie</a></li>
+                <li><a href="#">Právní záruka</a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+
+
+    <button id="scrollToTopBtn" class="scroll-to-top">
+        <img src="./img/circle-up-regular.svg" alt="Zpět nahoru" />
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

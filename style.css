@@ -1,0 +1,543 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::selection {
+  background: var(--netflixRed-color);
+}
+
+:root {
+    --netflixRed-color: rgb(214, 28, 28);
+    --nav-color: black;
+    --backgroundFooter-color: black;
+    --backgroundMovies-color: black;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+}
+::-webkit-scrollbar {
+  width: .5rem;
+  background: #222;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--netflixRed-color);
+  border-radius: 6.25rem;
+}
+
+
+
+/* Header styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 3.75rem;
+  background:  var(--nav-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9999;
+  padding: 0 2rem;
+}
+
+.navbar-logo img {
+  max-height: 3rem;
+  display: block;
+}
+
+.register-btn {
+  padding: .25rem .75rem;
+  background: rgb(214, 28, 28);
+  color: white;
+  border-radius: .25rem;
+  border: none;
+  cursor: pointer;
+  background-size: 200% 100%;
+  background-position: 0% 50%;  
+  text-decoration: none;
+}
+
+.register-btn:hover {
+  background: linear-gradient(90deg, rgb(214, 28, 28), rgb(255,255,255), rgb(214, 28, 28)); border: none;
+  background-size: 200% 100%;
+  animation: pulse 0.9s infinite, moveBg 2s linear infinite alternate;
+  color: black;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes moveBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.hero-background {
+  height: 100vh;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.85) 0%,
+      rgba(0,0,0,0.92) 60%,
+      rgba(0,0,0,1) 100%
+    ),
+    url("./img/background.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  justify-content: center;
+}
+
+.email-headline {
+  font-size: .75rem;
+}
+.email-block {
+  max-width: 26rem;
+  /* width: 100%; */
+  margin-top: .75rem;
+}
+
+.email-form input,
+.email-form input:-webkit-autofill,
+.email-form input:-webkit-autofill:focus,
+.email-form input:-webkit-autofill:hover,
+.email-form input:-webkit-autofill:active {
+  -webkit-text-fill-color: grey !important;
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  color: white !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.email-form input {
+  border: 1px solid white;
+  font-size: 0.75rem;
+  width: 100%;
+  flex: 1;
+  margin-right: .5rem;
+  padding-left: .5rem;
+}
+
+.email-form {
+  margin-top: .25rem;
+  display: flex;
+}
+
+.email-form button {
+  width: auto;
+  padding: .5rem;
+  background-color: rgb(214, 28, 28);
+  color: white;
+  border: none;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+/* Header styles end*/
+
+
+/* Movie section START*/
+.movie-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--backgroundMovies-color);
+    
+}
+
+.movie-preview {
+    display: flex;
+    justify-content: center;
+    gap: .75rem;
+}
+.movie-preview img {
+    width: 20%;
+}
+.movie-preview img:hover {
+    transform: scale(1.05);
+    transition: transform 0.6s ease;
+}
+.movie-button{
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+.movie-button a {
+    text-align: center;
+    background-color: rgb(214, 28, 28);
+    color: white;
+    text-decoration: none;
+    padding: .25rem .5rem;
+    border-radius: .25rem;
+    cursor: pointer;
+}
+
+select option:disabled {
+  color: #888 !important;
+}
+/* Movie section END */
+
+/* Footer START */
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--backgroundFooter-color);
+    padding-bottom: 3rem;
+    
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  width: 80%;
+}
+.footer-links ul {
+  list-style: none;
+}
+.footer-links li {
+  margin-bottom: .5rem;
+  font-size: .75rem;
+  line-height: 1.5;
+}
+.footer-links li:last-child {
+  margin-bottom: .5rem;
+}
+.footer-links a {
+  color: grey;
+  
+}
+/* Footer END */
+
+
+/* scroll pro js */
+.scroll-to-top {
+  display: none; /* skrytá ve výchozím stavu */
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 10000;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+.scroll-to-top img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+}
+.scroll-to-top:hover {
+  filter: brightness(1.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.scroll-to-top.hidden {
+  display: none;
+}
+.scroll-to-top.visible {
+  display: block;
+}
+/* scroll pro js end */
+
+
+/* Movies HTML */
+
+.movies-bg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--backgroundMovies-color);
+}
+
+.main-movies-button {
+  background-color: var(--netflixRed-color);
+  padding: .25rem .5rem;
+  margin-top: 3rem;
+  font-size: .75rem;
+}
+
+.main-movies-button a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-movies-select {
+  margin: 1.25rem 0;
+}
+
+.main-movies-select select {
+  padding: .25rem;
+  border-radius: .25rem;
+  border: 1px solid var(--netflixRed-color);
+  background-color: transparent;
+  color: white;
+}
+
+select option {
+  background-color: #141414;
+  color: white;
+}
+
+.APImovies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  width: 90%;
+}
+
+.movie {
+  display: flex;
+  height: 30vh;
+}
+
+.movie img {
+  object-fit: cover;
+  transform: rotate(8deg);
+  cursor: pointer;
+}
+.movie img:hover {
+  transform: rotate(0deg) scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+
+
+
+/* OVERLAY PRO OBRAZKY FILMU */
+.movie-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.movie-overlay.hidden {
+  display: none;
+}
+
+.movie-overlay-content {
+  background: rgba(30,30,30,0.9);
+  border-radius: 1.25rem;
+  padding: 1.75rem 2.5rem;
+  min-width: 18.75rem;
+  max-width: 90vw;
+  max-height: 90vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 1.75rem #000;
+  overflow-y: auto; 
+  scrollbar-width: thin;
+  scrollbar-color: var(--netflixRed-color) #222;
+}
+
+.movie-overlay-img {
+  max-width: 15rem;
+  margin-bottom: 1.5rem;
+  border-radius: .5rem;
+  box-shadow: 0 0 .5rem #222;
+}
+
+.movie-overlay-title {
+  margin: 10px 0 10px 0;
+  font-size: 2rem;
+  color: var(--netflixRed-color);
+}
+
+.movie-overlay-summary {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  max-width: 90%;
+  text-align: left;
+}
+
+.movie-overlay-close {
+  position: absolute;
+  top: .5rem; right: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--netflixRed-color);
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.movie-overlay-close:hover {
+  color: #fff;
+}
+
+.hidden {
+  display: none;
+}
+/* OVERLAY PRO OBRAZKY FILMU */
+/* Movies HTML END */
+
+
+
+/* SignIN START */
+
+.signin-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.85) 0%,
+      rgba(0,0,0,0.92) 60%,
+      rgba(0,0,0,1) 100%
+    ),
+    url("./img/movies-bg.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.signin-form input {
+    padding: .75rem;
+    margin: .25rem;
+    border-radius: .25rem;
+    border: 1px solid white;
+    background-color: transparent;
+    font-size: .75rem;
+    color: white;
+}
+.signin-form button {
+    padding: .25rem;
+    margin: .25rem;
+    border-radius: .25rem;
+    border: none;
+    background-color: var(--netflixRed-color);
+    color: white;
+    cursor: pointer;
+}
+
+.border-green {
+  border: 1px solid green !important;
+}
+.border-red {
+  border: 1px solid red !important;
+}
+
+.signin-form input:focus {
+  outline: none;  /* bez tohoto mi nefungoval spravne js na obarveni. Vzdy vybrany password input mel bily ramecek */
+}
+
+/* SignIN END */
+
+
+
+
+@media (max-width: 420px) {
+  .navbar {
+    padding: 0 .75rem;
+    height: 3rem;
+  }
+  .navbar-logo img {
+    height: 1.75rem;
+  }
+  .register-btn {
+    padding: .25rem .5rem;
+    font-size: 14px;
+  }
+  .hero-background {
+  height: 100vh;
+  }
+  .hero-content {
+    width: 90%;
+  }
+
+  .signin-form {
+    width: 90%;
+    padding: 20px;
+  }
+  .movie-preview {
+    flex-direction: column;
+    align-items: center;
+  }
+  .movie-preview img {
+    width: 60%;
+  }
+  .movie {
+    height: 40vh;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero-content {
+    width: 70%;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .scroll-to-top img {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+  }
+ 
+  .movie-overlay-content {
+    width: 90%;
+    max-width: none;
+    padding: 1.75rem 1.25rem ;
+    text-align: center;
+  }
+
+  .movie-overlay-summary {
+  font-size: 0.9rem;
+}
+}
+
+
